@@ -1,0 +1,6 @@
+apple
+banana
+citrus
+dapper
+elephant
+fearsome
