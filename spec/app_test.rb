@@ -1,29 +1,45 @@
 require 'rspec'
 require_relative '../lib/app'
 
-describe PlayerOne do
+describe Player do
+  describe ".p"
   describe ".select_letter" do
     context "given selection of letter a" do
       it "returns a" do
-        playerone = PlayerOne.new
+        skip
+        playerone = Player.new
         expect(playerone.select_letter).to eql("a")
       end
     end
 
-describe SelectWord do
+describe Word do
   describe ".get_word" do
     context "given selection of dog" do
       it "returns dog" do
         skip
-        firstword = SelectWord.new
+        firstword = Word.new
         expect(firstword.get_word).to eql("dog")
       end
     end
 
     context "given selection of first word from word list" do
       it "returns apple" do
-        listword = SelectWord.new
+        skip
+        listword = Word.new
         expect(listword.get_word).to eql("apple")
+        expect(listword.get_word).not_to eql("apple") 
+      end
+    end
+
+    context "given random word list" do
+      it "the words are random and do not repeat" do
+        new_instance = Word.new
+        word_list = new_instance.get_word_list
+        selected_words=[]
+        word_list.each do |word|
+          selected_words << word
+        end
+        expect(selected_words && word_list).to eql(selected_words)
       end
     end
   end
